@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>目录 - 作品集</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        .directory ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .directory ul li {
+            margin: 10px 0;
+        }
+
+        .directory ul li a {
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .directory ul li a:hover {
+            color: #00BFFF;
+        }
+
+        .content {
+            display: none; /* Initially hide the content */
+            margin: 20px;
+            padding: 10px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+
+    <h1>作品集 - 目录</h1>
+
+    <div class="directory">
+        <ul>
+            <li><a href="javascript:void(0);" onclick="toggleContent('content-one')">百年孤独</a></li>
+            <li><a href="javascript:void(0);" onclick="toggleContent('content-two')">了不起的盖茨比</a></li>
+            <li><a href="javascript:void(0);" onclick="toggleContent('content-three')">白鲸</a></li>
+            <li><a href="javascript:void(0);" onclick="toggleContent('content-four')">傲慢与偏见</a></li>
+        </ul>
+    </div>
+
+    <!-- 内容部分 -->
+    <div id="content-one" class="content">
+        <h2>百年孤独</h2>
+        <p>这里是《百年孤独》的内容。当你点击"百年孤独"时，这部分内容将显示出来。</p>
+    </div>
+
+    <div id="content-two" class="content">
+        <h2>了不起的盖茨比</h2>
+        <p>这里是《了不起的盖茨比》的内容。当你点击"了不起的盖茨比"时，这部分内容将显示出来。</p>
+    </div>
+
+    <div id="content-three" class="content">
+        <h2>白鲸</h2>
+        <p>这里是《白鲸》的内容。当你点击"白鲸"时，这部分内容将显示出来。</p>
+    </div>
+
+    <div id="content-four" class="content">
+        <h2>傲慢与偏见</h2>
+        <p>这里是《傲慢与偏见》的内容。当你点击"傲慢与偏见"时，这部分内容将显示出来。</p>
+    </div>
+
+    <script>
+        // Function to toggle the visibility of the content
+        function toggleContent(contentId) {
+            var content = document.getElementById(contentId);
+            // Toggle visibility
+            if (content.style.display === "none" || content.style.display === "") {
+                content.style.display = "block";
+            } else {
+                content.style.display = "none";
+            }
+        }
+    </script>
+
+</body>
+</html>
