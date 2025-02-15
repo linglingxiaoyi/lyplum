@@ -1,99 +1,149 @@
-<style>
-    /* 基本样式 */
-    body {
-        font-family: Arial, sans-serif;
-        line-height: 1.6;
-        margin: 0;
-        padding: 0;
-        background-color: #f4f4f4;
-        color: rgba(51, 51, 51, 0.3); /* 设置文本透明度 */
-    }
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="展示我的作品和项目。">
+    <meta name="keywords" content="作品集, 项目展示, 前端开发">
+    <title>作品集 - 我的个人网站</title>
+    <link rel="stylesheet" href="styles/portfolio.css">
+    <style>
+        /* 基本样式 */
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
 
-    /* 导航栏 */
-    nav {
-        background: rgba(162, 184, 202, 0.3); /* 设置导航栏透明度 */
-        padding: 10px 0;
-        text-align: center;
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-    }
+        /* 导航栏 */
+        nav {
+            background: rgba(162, 184, 202, 0.9);
+            padding: 10px 0;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
 
-    nav ul {
-        list-style: none;
-        padding: 0;
-        margin: 0;
-    }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
 
-    nav ul li {
-        display: inline;
-        margin: 0 15px;
-    }
+        nav ul li {
+            display: inline;
+            margin: 0 15px;
+        }
 
-    nav ul li a {
-        color: rgba(255, 255, 255, 0.3); /* 设置导航文本透明度 */
-        text-decoration: none;
-        font-weight: bold;
-    }
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
 
-    nav ul li a:hover {
-        color: rgba(0, 191, 255, 0.3); /* 设置鼠标悬停时的透明度 */
-        text-decoration: underline;
-    }
+        nav ul li a:hover {
+            color: #00BFFF;
+            text-decoration: underline;
+        }
 
-    /* 作品集内容 */
-    section#portfolio {
-        padding: 20px;
-        margin: 20px auto;
-        max-width: 800px;
-        background-color: rgba(255, 255, 255, 0.3); /* 设置作品集背景透明度 */
-        border-radius: 5px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    }
+        /* 作品集内容 */
+        section#portfolio {
+            padding: 20px;
+            margin: 20px auto;
+            max-width: 800px;
+            background-color: white;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
 
-    section#portfolio h2 {
-        text-align: center;
-        color: rgba(51, 51, 51, 0.3); /* 设置标题透明度 */
-        border-bottom: 2px solid rgba(51, 51, 51, 0.3); /* 设置标题下划线透明度 */
-        padding-bottom: 10px;
-    }
+        section#portfolio h2 {
+            text-align: center;
+            color: #333;
+            border-bottom: 2px solid #333;
+            padding-bottom: 10px;
+        }
 
-    .projects {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 20px;
-        justify-content: center;
-    }
+        .projects {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
 
-    .project {
-        flex: 1 1 calc(25% - 40px);
-        background-color: rgba(249, 249, 249, 0.3); /* 设置项目背景透明度 */
-        padding: 15px;
-        border-radius: 5px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        text-align: center;
-    }
+        .project {
+            flex: 1 1 calc(25% - 40px);
+            background-color: #f9f9f9;
+            padding: 15px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
 
-    .project h3 {
-        margin-top: 0;
-        color: rgba(51, 51, 51, 0.3); /* 设置项目标题透明度 */
-    }
+        .project h3 {
+            margin-top: 0;
+        }
 
-    .project a {
-        color: rgba(51, 51, 51, 0.3); /* 设置链接文本透明度 */
-        text-decoration: none;
-        font-weight: bold;
-    }
+        .project a {
+            color: #333;
+            text-decoration: none;
+            font-weight: bold;
+        }
 
-    .project a:hover {
-        color: rgba(0, 191, 255, 0.3); /* 设置链接鼠标悬停时的透明度 */
-        text-decoration: underline;
-    }
+        .project a:hover {
+            color: #00BFFF;
+            text-decoration: underline;
+        }
 
-    /* 页脚 */
-    footer {
-        background-color: rgba(162, 184, 202, 0.3); /* 设置页脚背景透明度 */
-        color: rgba(255, 255, 255, 0.3); /* 设置页脚文本透明度 */
-        text-align: center;
-        padding: 20px;
-        margin-top: 40px;
-    }
-</style>
+        /* 页脚 */
+        footer {
+            background-color: #A2B8CA;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav>
+        <ul>
+            <li><a href="index.html">首页</a></li>
+            <li><a href="about.html">关于我</a></li>
+            <li><a href="portfolio.html">作品集</a></li>
+            <li><a href="blog.html">博客</a></li>
+            <li><a href="contact.html">联系我</a></li>
+        </ul>
+    </nav>
+
+    <!-- 作品集内容 -->
+    <section id="portfolio">
+        <h2>我的作品</h2>
+        <div class="projects">
+            <div class="project">
+                <h3><a href="https://example.com/wen" target="_blank">文</a></h3>
+                <p>探索文学的魅力，感受文字的力量。</p>
+            </div>
+            <div class="project">
+                <h3><a href="https://example.com/li" target="_blank">理</a></h3>
+                <p>揭开科学的面纱，发现逻辑的美妙。</p>
+            </div>
+            <div class="project">
+                <h3><a href="https://example.com/chihewanle" target="_blank">吃喝玩乐</a></h3>
+                <p>享受生活的乐趣，品味美食与欢乐。</p>
+            </div>
+            <div class="project">
+                <h3><a href="https://example.com/other" target="_blank">Other</a></h3>
+                <p>其他有趣的内容，等你来发现。</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer>
+        <p>&copy; 2025 Pluma. All rights reserved.</p>
+    </footer>
+</body>
+</html>
