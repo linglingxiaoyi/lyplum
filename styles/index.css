@@ -1,0 +1,98 @@
+/* 设置页面的背景图片 */
+body {
+    background-image: url('../assets/images/background.jpg');
+    background-size: cover; /* 背景图片覆盖整个屏幕 */
+    background-position: center center; /* 背景图片居中显示 */
+    background-attachment: fixed; /* 背景固定不随滚动 */
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* 更现代的字体 */
+    color: #FFFFFF; /* 亮白色字体 */
+    line-height: 1.6;
+}
+
+/* 导航栏样式 */
+nav {
+    padding: 15px 0;
+    text-align: center;
+    position: sticky; /* 导航栏固定在顶部 */
+    top: 0;
+    z-index: 1000; /* 确保导航栏在最上层 */
+    backdrop-filter: blur(10px); /* 背景模糊效果 */
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* 导航项之间的间距 */
+}
+
+nav ul li {
+    display: inline;
+}
+
+nav ul li a {
+    color: #FFFFFF; /* 亮白色字体 */
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1em;
+    transition: color 0.3s ease; /* 添加颜色过渡效果 */
+}
+
+nav ul li a:hover {
+    color: #00BFFF; /* 悬停时变为天蓝色 */
+}
+
+/* 首页内容样式 */
+header {
+    color: #FFFFFF; /* 亮白色字体 */
+    text-align: center;
+    padding: 100px 20px; /* 增加内边距 */
+    margin-top: 0; /* 移除顶部间距 */
+    border-radius: 10px; /* 圆角效果 */
+    max-width: 800px; /* 限制内容宽度 */
+    margin: 100px auto; /* 居中显示 */
+}
+
+header h1 {
+    font-size: 3em; /* 更大的标题 */
+    margin: 0;
+    font-weight: 700; /* 更粗的字体 */
+}
+
+header p {
+    font-size: 1.3em;
+    margin-top: 10px;
+}
+
+/* 页脚 */
+footer {
+    color: #FFFFFF; /* 亮白色字体 */
+    text-align: center;
+    padding: 30px 20px;
+    margin-top: 60px;
+    backdrop-filter: blur(10px); /* 背景模糊效果 */
+}
+
+footer p {
+    margin: 0;
+    font-size: 1em;
+}
+
+footer .social-links {
+    margin-top: 15px;
+}
+
+footer .social-links a {
+    color: #FFFFFF; /* 亮白色字体 */
+    margin: 0 10px;
+    font-size: 1.5em;
+    transition: color 0.3s ease; /* 添加颜色过渡效果 */
+}
+
+footer .social-links a:hover {
+    color: #00BFFF; /* 悬停时变为天蓝色 */
+}
