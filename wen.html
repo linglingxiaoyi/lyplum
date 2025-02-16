@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>目录 - 作品集</title>
     <style>
         body {
@@ -46,7 +47,12 @@
             border-radius: 5px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
+
+        .markdown-content {
+            white-space: pre-wrap; /* Preserve formatting */
+        }
     </style>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script> <!-- Include marked.js -->
 </head>
 <body>
 
@@ -55,31 +61,29 @@
     <div class="directory">
         <ul>
             <li><a href="javascript:void(0);" onclick="toggleContent('content-one')">百年孤独</a></li>
-            <li><a href="javascript:void(0);" onclick="toggleContent('content-two')">了不起的盖茨比</a></li>
-            <li><a href="javascript:void(0);" onclick="toggleContent('content-three')">白鲸</a></li>
-            <li><a href="javascript:void(0);" onclick="toggleContent('content-four')">傲慢与偏见</a></li>
+            <li><a href="javascript:void(0);" onclick="toggleContent('content-two')">简爱</a></li>
+            <li><a href="javascript:void(0);" onclick="toggleContent('content-three')">流浪地球</a></li>
+            <li><a href="javascript:void(0);" onclick="toggleContent('content-four')">飘</a></li>
         </ul>
     </div>
 
     <!-- 内容部分 -->
     <div id="content-one" class="content">
         <h2>百年孤独</h2>
-        <p>这里是《百年孤独》的内容。当你点击"百年孤独"时，这部分内容将显示出来。</p>
+        <button onclick="loadMarkdown()">加载《百年孤独》Markdown文件</button>
+        <div id="markdown-content" class="markdown-content"></div>
     </div>
 
     <div id="content-two" class="content">
-        <h2>了不起的盖茨比</h2>
-        <p>这里是《了不起的盖茨比》的内容。当你点击"了不起的盖茨比"时，这部分内容将显示出来。</p>
+        <h2>简爱</h2>
     </div>
 
     <div id="content-three" class="content">
-        <h2>白鲸</h2>
-        <p>这里是《白鲸》的内容。当你点击"白鲸"时，这部分内容将显示出来。</p>
+        <h2>流浪地球</h2>
     </div>
 
     <div id="content-four" class="content">
-        <h2>傲慢与偏见</h2>
-        <p>这里是《傲慢与偏见》的内容。当你点击"傲慢与偏见"时，这部分内容将显示出来。</p>
+        <h2>飘</h2>
     </div>
 
     <script>
@@ -92,6 +96,20 @@
             } else {
                 content.style.display = "none";
             }
+        }
+
+        // Function to load and render the Markdown content from the file
+        function loadMarkdown() {
+            fetch('files/MD/百年孤独.md') // Replace with your actual file path
+                .then(response => response.text()) // Read the file as text
+                .then(markdownText => {
+                    // Convert Markdown to HTML using marked.js
+                    document.getElementById('markdown-content').innerHTML = marked(markdownText);
+                })
+                .catch(error => {
+                    console.error('Error loading markdown:', error);
+                    document.getElementById('markdown-content').innerHTML = '无法加载文件，请稍后再试。';
+                });
         }
     </script>
 
