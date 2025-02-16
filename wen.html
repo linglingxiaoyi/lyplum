@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>目录 - 作品集</title>
+    <title>作品集目录</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -70,20 +70,23 @@
     <!-- 内容部分 -->
     <div id="content-one" class="content">
         <h2>百年孤独</h2>
-        <button onclick="loadMarkdown()">加载《百年孤独》Markdown文件</button>
-        <div id="markdown-content" class="markdown-content"></div>
+        <button onclick="loadMarkdown('百年孤独')">加载《百年孤独》Markdown文件</button>
+        <div id="markdown-content-one" class="markdown-content"></div>
     </div>
 
     <div id="content-two" class="content">
         <h2>简爱</h2>
+        <div id="markdown-content-two" class="markdown-content"></div>
     </div>
 
     <div id="content-three" class="content">
         <h2>流浪地球</h2>
+        <div id="markdown-content-three" class="markdown-content"></div>
     </div>
 
     <div id="content-four" class="content">
         <h2>飘</h2>
+        <div id="markdown-content-four" class="markdown-content"></div>
     </div>
 
     <script>
@@ -99,17 +102,29 @@
         }
 
         // Function to load and render the Markdown content from the file
-        function loadMarkdown() {
-            fetch('files/MD/百年孤独.md') // Replace with your actual file path
-                .then(response => response.text()) // Read the file as text
-                .then(markdownText => {
-                    // Convert Markdown to HTML using marked.js
-                    document.getElementById('markdown-content').innerHTML = marked(markdownText);
-                })
-                .catch(error => {
-                    console.error('Error loading markdown:', error);
-                    document.getElementById('markdown-content').innerHTML = '无法加载文件，请稍后再试。';
-                });
+        function loadMarkdown(bookName) {
+            // Construct file path based on the book name
+            const filePath = 'files/MD/' + bookName + '.md'; // Replace with your actual file path
+
+            fetch(filePath, {
+                headers: {
+                    'Accept': 'text/plain' // Ensure the server sends the correct content type
+                }
+            })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('文件加载失败');
+                }
+                return response.text(); // Read the file as text
+            })
+            .then(markdownText => {
+                // Convert Markdown to HTML using marked.js
+                document.getElementById('markdown-content-' + bookName).innerHTML = marked(markdownText);
+            })
+            .catch(error => {
+                console.error('Error loading markdown:', error);
+                document.getElementById('markdown-content-' + bookName).innerHTML = '无法加载文件，请稍后再试。';
+            });
         }
     </script>
 
