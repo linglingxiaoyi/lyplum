@@ -1,0 +1,53 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    padding-left: 100px;  /* 页面左边添加留白 */
+    padding-right: 100px; /* 页面右边添加留白 */
+    margin: 0;  /* 取消默认的外边距 */
+    width: 100%; /* 确保页面占满整个宽度 */
+     overflow-x: hidden;  /* 禁止横向滚动 */
+}
+
+h1 {
+    text-align: center; /* 将标题居中 */
+}
+
+.content {
+    margin-top: 20px;
+    display: none; /* 默认隐藏内容 */
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 66%; /* 内容区域宽度为屏幕的 2/3 */
+    margin-left: auto;
+    margin-right: auto;
+    position: relative; /* 确保收起按钮可以定位 */
+}
+
+/* 按钮样式 */
+.load-btn, .close-btn {
+    margin-top: 10px;
+    padding: 8px 16px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+/* 收起按钮放在右下角 */
+.close-btn {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+}
+
+/* 按钮悬停效果 */
+.load-btn:hover, .close-btn:hover {
+    background-color: #A9A9A9;
+}
+
+/* 按钮外观 */
+.load-btn {
+    background-color: #D3D3D3;
+}
