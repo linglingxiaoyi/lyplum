@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>语料园</title>
+    <link rel="stylesheet" href="../styles/blog-post.css">
+    <style>
+        body {
+            font-family: 'Microsoft YaHei', '微软雅黑', sans-serif;
+            text-align: center;  /* 内容居中 */
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;  /* 让页面内容至少占满整个视窗 */
+            display: flex;
+            justify-content: center;  /* 水平居中 */
+            align-items: center;  /* 垂直居中 */
+            flex-direction: column;
+            background-color: #f5f5f5;
+            overflow-y: auto; /* 超出时可以滚动 */
+        }
+
+        h1 {
+            font-family: 'SimHei', '黑体', sans-serif;  /* 使用黑体 */
+            font-size: 32px;
+            margin-bottom: 20px;
+        }
+
+        /* 中文字体 */
+        .songti {
+            font-family: 'SimSun', '宋体', serif;
+        }
+
+        .heiti {
+            font-family: 'SimHei', '黑体', sans-serif;
+        }
+
+        .kaiti {
+            font-family: 'KaiTi', '楷体', cursive;
+        }
+
+        .fangsong {
+            font-family: 'FangSong', '仿宋', serif;
+        }
+
+        .yahei {
+            font-family: 'Microsoft YaHei', '微软雅黑', sans-serif;
+        }
+
+        .xihei {
+            font-family: 'STHeiti', '华文细黑', sans-serif;
+        }
+
+        .huawenkaiti {
+            font-family: 'STKaiti', '华文楷体', cursive;
+        }
+
+        /* 英文字体 */
+        .arial {
+            font-family: Arial, sans-serif;
+        }
+
+        .times {
+            font-family: 'Times New Roman', serif;
+        }
+
+        .courier {
+            font-family: 'Courier New', monospace;
+        }
+
+        .georgia {
+            font-family: Georgia, serif;
+        }
+
+        .verdana {
+            font-family: Verdana, sans-serif;
+        }
+
+        .tahoma {
+            font-family: Tahoma, sans-serif;
+        }
+
+        .comic {
+            font-family: 'Comic Sans MS', cursive;
+        }
+
+        /* 样式优化 */
+        p {
+            font-size: 20px;
+            margin: 10px 0;
+        }
+
+        #back-button {
+            position: fixed;
+            bottom: 20px;
+            right: 80px;  /* 与返回顶部按钮保持间距 */
+            padding: 10px 15px;
+            background-color: #A2B8CA;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        #back-button:hover {
+            background-color: #00BFFF;  /* 天蓝色 */
+        }
+
+        /* 表情符号区域 */
+        .emoji-container {
+            margin-top: 30px;
+            font-size: 30px;
+        }
+
+        .emoji-container span {
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>语料园</h1> <!-- 页面标题使用黑体 -->
+    <p class="songti">这是宋体 (SimSun) 的效果。</p>
+    <p class="heiti">这是黑体 (SimHei) 的效果。</p>
+    <p class="kaiti">这是楷体 (KaiTi) 的效果。</p>
+    <p class="fangsong">这是仿宋 (FangSong) 的效果。</p>
+    <p class="yahei">这是微软雅黑 (Microsoft YaHei) 的效果。</p>
+    <p class="xihei">这是华文细黑 (STHeiti) 的效果。</p>
+    <p class="huawenkaiti">这是华文楷体 (STKaiti) 的效果。</p>
+
+    <h1>英文字体示例</h1>
+    <p class="arial">This is Arial font.</p>
+    <p class="times">This is Times New Roman font.</p>
+    <p class="courier">This is Courier New font.</p>
+    <p class="georgia">This is Georgia font.</p>
+    <p class="verdana">This is Verdana font.</p>
+    <p class="tahoma">This is Tahoma font.</p>
+    <p class="comic">This is Comic Sans MS font.</p>
+
+    <div class="emoji-container">
+        <span>🌾</span>
+        <span>🍃</span>
+        <span>🍂</span>
+        <span>🌱</span>
+        <span>🌿</span>
+        <span>🌳</span>
+        <span>🌴</span>
+        <span>🌵</span>
+        <span>🍄</span>
+        <span>🌺</span>
+        <span>🌻</span>
+        <span>🌷</span>
+        <span>🌼</span>
+        <span>🌸</span>
+        <span>🌑</span>
+        <span>🌒</span>
+        <span>🌘</span>
+        <span>🌙</span>
+        <span>🌕</span>
+        <span>🌜</span>
+        <span>🌝</span>
+        <span>🌞</span>
+        <span>🌬️</span>
+        <span>🌈</span>
+        <span>🌍</span>
+        <span>🌏</span>
+        <span>🌎</span>
+        <span>🌻🌼🌷</span>
+        <span>🏞️</span>
+        <span>🏕️</span>
+        <span>🌄</span>
+        <span>🏜️</span>
+    </div>
+
+    <!-- 返回顶部按钮 -->
+    <button id="back-to-top" title="返回顶部">↑</button>
+    <!-- 返回按钮 -->
+    <button id="back-button" title="返回">返回</button>
+
+    <!-- 引入 JavaScript 文件 -->
+    <script src="../scripts.js" ></script>
+</body>
+</html>

@@ -4,7 +4,7 @@ body {
     line-height: 1.6;
     margin: 0;
     padding: 0;
-    background: url('../assets/images/6.jpg') no-repeat center center fixed;
+    background: url('../assets/images/8.jpg') no-repeat center center fixed;
     background-size: cover;
     color: #333;
 }
@@ -41,7 +41,7 @@ nav ul li a:hover {
 
 /* 首页 */
 header {
-    background: url('../assets/images/6.jpg') no-repeat center center;
+    background: url('../assets/images/8.jpg') no-repeat center center;
     background-size: cover;
     color: white;
     padding: 60px 20px;
@@ -65,7 +65,7 @@ section {
     padding: 20px;
     margin: 20px auto;
     max-width: 800px;
-    background-color: rgba(255, 255, 255, 0.3); /* 调整透明度 */
+    background-color: rgba(255, 255, 255, 0.5); /* 调整透明度 */
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }

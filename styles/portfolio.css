@@ -7,6 +7,9 @@ body {
     background: url('../assets/images/5.jpg') no-repeat center center fixed;
     background-size: cover;
     color: #333;
+    min-height: 100vh; /* 确保 body 的高度至少是浏览器高度 */
+    display: flex;
+    flex-direction: column;
 }
 
 /* 导航栏 */
@@ -34,6 +37,11 @@ nav ul li a {
     font-weight: bold;
 }
 
+/* 保持导航栏字体不变 */
+nav ul li a {
+         font-family: Arial, sans-serif;
+}
+
 nav ul li a:hover {
     color: #00BFFF;  /* 天蓝色 */
     text-decoration: underline;
@@ -58,6 +66,9 @@ header h1 {
 header p {
     font-size: 1.2em;
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4);
+    margin-top: 0;
+    font-family: "华文楷体", "KaiTi", serif; /* 设置为华文楷体 */
+    font-weight: bold; /* 加粗文本 */
 }
 
 /* 内容部分 */
@@ -143,8 +154,13 @@ footer {
     text-align: center;
     padding: 20px;
     margin-top: 40px;
+    position: relative; /* 修改为相对定位 */
+    bottom: 0;
+    width: 100%;
+    box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.2);
 }
 
+/* 社交链接 */
 .social-links {
     margin-top: 10px;
 }

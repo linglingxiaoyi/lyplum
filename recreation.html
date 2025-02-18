@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>动态背景和词汇</title>
+    <style>
+        /* 设置背景图片 */
+        body {
+            background-image: url('assets/images/9.jpg');
+            background-size: cover;
+            background-position: center;
+            margin: 0;
+            height: 100vh;
+            overflow: hidden;  /* 防止内容超出屏幕 */
+        }
+
+        /* 右侧动画人物 */
+        #animated-image {
+            position: fixed;
+            top: 50%;
+            left: 0;
+            transform: translateY(-50%);
+            width: 200px;  /* 增大图片的宽度 */
+            height: 355px;  /* 增大图片的高度 */
+            background-image: url('assets/images/哪吒1.jpg');  /* 确认图片路径 */
+            background-size: cover;
+            background-position: center;
+            animation: crazy-motion 10s infinite ease-in-out;  /* 调整动画持续时间 */
+            opacity: 0.7;  /* 设置透明度为80% */
+        }
+
+        /* 定义疯狂的翻跟斗和左右跳动的动画 */
+        @keyframes crazy-motion {
+            0% {
+                transform: translateX(0) translateY(0) rotate(0deg);  /* 初始位置 */
+            }
+            10% {
+                transform: translateX(20px) translateY(-20px) rotate(30deg);  /* 小幅跳跃和旋转 */
+            }
+            20% {
+                transform: translateX(-20px) translateY(20px) rotate(-30deg); /* 左右翻滚 */
+            }
+            30% {
+                transform: translateX(50px) translateY(-50px) rotate(60deg);  /* 向右大幅跳跃 */
+            }
+            40% {
+                transform: translateX(-50px) translateY(50px) rotate(-60deg); /* 向左大幅跳跃 */
+            }
+            50% {
+                transform: translateX(100px) translateY(-100px) rotate(90deg);  /* 快速跳跃并旋转 */
+            }
+            60% {
+                transform: translateX(-100px) translateY(100px) rotate(-90deg); /* 快速向左跳跃并旋转 */
+            }
+            70% {
+                transform: translateX(30px) translateY(-30px) rotate(180deg);  /* 跳跃并翻跟斗 */
+            }
+            80% {
+                transform: translateX(-30px) translateY(30px) rotate(-180deg);  /* 另一方向翻跟斗 */
+            }
+            90% {
+                transform: translateX(10px) translateY(-10px) rotate(360deg);  /* 旋转 */
+            }
+            100% {
+                transform: translateX(0) translateY(0) rotate(0deg);  /* 返回到初始位置 */
+            }
+        }
+
+        /* 定义飘动的词汇样式 */
+        .floating-word {
+            position: absolute;
+            font-size: 24px;
+            font-weight: bold;
+            color: rgba(255, 255, 255, 0.8);
+            animation: float 10s infinite ease-in-out;
+        }
+
+        /* 定义词汇漂浮的动画 */
+        @keyframes float {
+            0% {
+                transform: translateY(100vh) rotate(0deg);
+                opacity: 0;
+            }
+            25% {
+                transform: translateY(-50vh) rotate(180deg);
+                opacity: 1;
+            }
+            50% {
+                transform: translateY(0) rotate(360deg);
+                opacity: 1;
+            }
+            75% {
+                transform: translateY(-50vh) rotate(180deg);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(100vh) rotate(0deg);
+                opacity: 0;
+            }
+        }
+
+        /* 设置词汇的随机位置 */
+        .floating-word:nth-child(1) { top: 10%; left: 5%; animation-duration: 12s; }
+        .floating-word:nth-child(2) { top: 20%; left: 30%; animation-duration: 14s; }
+        .floating-word:nth-child(3) { top: 30%; left: 60%; animation-duration: 16s; }
+        .floating-word:nth-child(4) { top: 40%; left: 80%; animation-duration: 18s; }
+        .floating-word:nth-child(5) { top: 50%; left: 15%; animation-duration: 10s; }
+        .floating-word:nth-child(6) { top: 60%; left: 50%; animation-duration: 12s; }
+        .floating-word:nth-child(7) { top: 70%; left: 40%; animation-duration: 20s; }
+        .floating-word:nth-child(8) { top: 80%; left: 70%; animation-duration: 22s; }
+        .floating-word:nth-child(9) { top: 90%; left: 10%; animation-duration: 25s; }
+    </style>
+</head>
+<body>
+    <!-- 右侧动画人物 -->
+    <div id="animated-image"></div>
+
+    <!-- 显示不同的词汇，每个词汇都用 <a> 标签包裹，点击跳转到不同页面 -->
+    <a href="page1.html" class="floating-word">九寨沟-2023-2-23</a>
+    <a href="page2.html" class="floating-word">春节-2025</a>
+    <a href="page3.html" class="floating-word">端午节-2024</a>
+    <a href="page4.html" class="floating-word">全糖可乐</a>
+    <a href="page5.html" class="floating-word">哪吒</a>
+    <a href="page6.html" class="floating-word">白月梵星</a>
+    <a href="page7.html" class="floating-word">csy</a>
+    <a href="page8.html" class="floating-word">yxy</a>
+    <a href="page9.html" class="floating-word">zm</a>
+    <a href="page10.html" class="floating-word">十世禅</a>
+    <a href="page11.html" class="floating-word">你好星期六</a>
+    <a href="page12.html" class="floating-word">可恶的CS</a>
+    <a href="page13.html" class="floating-word">敖瑞鹏</a>
+    <a href="page14.html" class="floating-word">常华森</a>
+    <a href="page15.html" class="floating-word">代柯何申王</a>
+</body>
+</html>

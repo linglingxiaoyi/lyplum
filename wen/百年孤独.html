@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="../styles/markdown.css">
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+
+</head>
+<body>
+    <div id="markdown-content" class="content">
+        <!-- Markdown 内容会加载到这里 -->
+    </div>
+
+    <script>
+        // 页面加载时，自动加载并显示 Markdown 文件
+        window.onload = function() {
+            loadMarkdown();
+        };
+
+        function loadMarkdown() {
+            const filePath = '../files/MD/百年孤独.md';  // 这个路径是相对路径
+            fetch(filePath)
+                .then(response => response.text())  // 解析为文本
+                .then(markdownText => {
+                    const htmlContent = marked.parse(markdownText);  // 使用 marked 转换为 HTML
+                    document.getElementById('markdown-content').innerHTML = htmlContent;  // 填充到页面
+                })
+                .catch(error => {
+                    console.error('Error loading markdown:', error);
+                    document.getElementById('markdown-content').innerHTML = '无法加载文件，请稍后再试。';
+                });
+        }
+    </script>
+    <!-- 返回顶部按钮 -->
+                <button id="back-to-top" title="返回顶部">↑</button>
+                <!-- 返回按钮 -->
+                <button id="back-button" title="返回">返回</button>
+                <!-- 引入 JavaScript 文件 -->
+                <script src="../scripts.js" ></script>
+</body>
+</html>

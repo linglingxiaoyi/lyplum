@@ -1,38 +1,49 @@
+/* 页面基础样式 */
 body {
     font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
+    background-color: #f3f8f6;
+    background-image: url('../assets/images/7.jpg'); /* 背景图片路径 */
+    background-size: cover; /* 背景图覆盖整个屏幕 */
+    background-position: center; /* 背景图居中 */
+    background-repeat: no-repeat; /* 防止背景图重复 */
     color: #333;
-    padding-left: 100px;  /* 页面左边添加留白 */
-    padding-right: 100px; /* 页面右边添加留白 */
     margin: 0;  /* 取消默认的外边距 */
+    padding: 0 50px;  /* 页面左右添加留白 */
     width: 100%; /* 确保页面占满整个宽度 */
-     overflow-x: hidden;  /* 禁止横向滚动 */
+    overflow-x: hidden;  /* 禁止横向滚动 */
 }
 
+/* 标题样式 */
 h1 {
     text-align: center; /* 将标题居中 */
+    font-size: 2.5em;
+    margin-top: 30px;
+    color: #333;
 }
 
-.content {
-    margin-top: 20px;
-    display: none; /* 默认隐藏内容 */
+/* Markdown 内容区域 */
+#markdown-content {
+    margin-top: 40px;
+    display: block; /* 确保它在显示时为块级元素 */
     background-color: white;
-    padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    width: 66%; /* 内容区域宽度为屏幕的 2/3 */
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    width: 66%;
     margin-left: auto;
     margin-right: auto;
-    position: relative; /* 确保收起按钮可以定位 */
+    position: relative;
+    transition: all 0.3s ease;
 }
 
 /* 按钮样式 */
 .load-btn, .close-btn {
-    margin-top: 10px;
-    padding: 8px 16px;
+    margin-top: 20px;
+    padding: 10px 20px;
     font-size: 16px;
     cursor: pointer;
     border-radius: 5px;
+    transition: background-color 0.3s ease;  /* 按钮悬停效果 */
 }
 
 /* 收起按钮放在右下角 */
@@ -40,14 +51,114 @@ h1 {
     position: absolute;
     bottom: 10px;
     right: 10px;
+    background-color: #ff6347;  /* 收起按钮颜色 */
+    color: white;
+    border: none;
 }
 
-/* 按钮悬停效果 */
-.load-btn:hover, .close-btn:hover {
-    background-color: #A9A9A9;
+.close-btn:hover {
+    background-color: #f44336; /* 悬停时改变颜色 */
 }
 
 /* 按钮外观 */
 .load-btn {
     background-color: #D3D3D3;
+    border: none;
+    color: #333;
+}
+
+.load-btn:hover {
+    background-color: #A9A9A9;  /* 按钮悬停效果 */
+}
+
+/* 返回按钮样式 */
+#back-button {
+    position: fixed;
+    bottom: 20px;
+    right: 80px;  /* 与返回顶部按钮保持间距 */
+    padding: 12px 18px;
+    background-color: #A2B8CA;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    font-size: 1em;
+    transition: background-color 0.3s ease;
+}
+
+#back-button:hover {
+    background-color: #00BFFF;  /* 天蓝色 */
+}
+
+/* 样式: 代码框 */
+code {
+    background-color: #f4f4f4;
+    border-radius: 5px;
+    padding: 2px 6px;
+    font-size: 1em;
+    color: #1150af; /* 可自定义代码字体颜色 */
+}
+
+pre {
+    background-color: #f4f4f4;
+    border-radius: 5px;
+    padding: 15px;
+    overflow: auto;
+    font-size: 1.5em;
+    color: #1150af; /* 可自定义代码字体颜色 */
+    margin: 20px 0;
+    position: relative; /* 使按钮定位在代码框内部 */
+}
+/* 复制按钮样式 */
+.copy-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    padding: 8px 12px;
+    background-color: #aba798;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 0.7em;
+    cursor: pointer;
+    opacity: 0.8;
+    transition: background-color 0.3s;
+}
+
+.copy-btn:hover {
+    background-color: #e1d1d9;
+}
+
+.copy-btn:focus {
+    outline: none;
+}
+
+
+/* 适应小屏幕：当视口宽度小于768px时 */
+@media screen and (max-width: 768px) {
+    body {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    /* 内容区域宽度缩小 */
+    .markdown-content {
+        width: 90%;
+    }
+
+    /* 标题和按钮缩小 */
+    h1 {
+        font-size: 2em;
+    }
+
+    .load-btn, .close-btn {
+        font-size: 14px;
+        padding: 8px 16px;
+    }
+
+    #back-button {
+        padding: 10px 14px;
+        font-size: 0.9em;
+    }
 }

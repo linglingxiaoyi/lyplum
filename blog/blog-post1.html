@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles/markdown.css">
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+</head>
+<body>
+    <div id="markdown-content" class="content">
+        <!-- Markdown 内容会加载到这里 -->
+    </div>
+
+    <script>
+        // 页面加载时，自动加载并显示 Markdown 文件
+        window.onload = function() {
+            loadMarkdown();
+        };
+
+        function loadMarkdown() {
+            const filePath = '../files/MD/blog-port1.md';  // 这个路径是相对路径
+            fetch(filePath)
+                .then(response => response.text())  // 解析为文本
+                .then(markdownText => {
+                    const htmlContent = marked.parse(markdownText);  // 使用 marked 转换为 HTML
+                    document.getElementById('markdown-content').innerHTML = htmlContent;  // 填充到页面
+
+                    // 在解析后的内容中为所有代码块添加复制按钮
+                    addCopyButtons();
+                })
+                .catch(error => {
+                    console.error('Error loading markdown:', error);
+                    document.getElementById('markdown-content').innerHTML = '无法加载文件，请稍后再试。';
+                });
+        }
+
+        function addCopyButtons() {
+            // 找到所有的 <pre><code> 标签
+            const codeBlocks = document.querySelectorAll('pre code');
+
+            codeBlocks.forEach(codeBlock => {
+                // 创建复制按钮
+                const copyButton = document.createElement('button');
+                copyButton.classList.add('copy-btn');
+                copyButton.textContent = 'copy';
+
+                // 绑定复制功能
+                copyButton.addEventListener('click', function() {
+                    copyCodeToClipboard(codeBlock);
+                });
+
+                // 将复制按钮添加到代码块上方
+                codeBlock.parentElement.insertBefore(copyButton, codeBlock);
+            });
+        }
+
+        function copyCodeToClipboard(codeBlock) {
+            const range = document.createRange();
+            range.selectNodeContents(codeBlock);  // 选择代码块内容
+            const selection = window.getSelection();
+            selection.removeAllRanges();  // 清除现有选择
+            selection.addRange(range);  // 添加新的选择
+
+            try {
+                document.execCommand('copy');  // 执行复制操作
+                alert('代码已复制到剪贴板！');
+            } catch (err) {
+                alert('复制失败，请手动复制！');
+            }
+
+            // 清除选中的内容
+            selection.removeAllRanges();
+        }
+    </script>
+
+    <!-- 返回顶部按钮 -->
+    <button id="back-to-top" title="返回顶部">↑</button>
+    <!-- 返回按钮 -->
+    <button id="back-button" title="返回">返回</button>
+
+    <!-- 引入 JavaScript 文件 -->
+    <script src="../scripts.js"></script>
+</body>
+</html>

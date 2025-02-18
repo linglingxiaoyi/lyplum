@@ -1,10 +1,62 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles/li.css">
 </head>
-<body>
 
+<body>
+  <!-- 导航栏 -->
+  <nav>
+    <ul>
+      <li><a href="index.html">首页</a></li>
+      <li><a href="about.html">关于我</a></li>
+      <li><a href="portfolio.html">作品集</a></li>
+      <li><a href="blog.html">博客</a></li>
+      <li><a href="contact.html">联系我</a></li>
+    </ul>
+  </nav>
+
+  <div class="container">
+    <h1>science</h1>
+    <p>这里是网站上的所有博客文章。要查看最新的文章和它们的描述，请访问 <a href="/blog/">博客</a> 页面。</p>
+    <p>对于那些结构较松散或涉及更随机话题的文章，请查看我的 <a href='/wiki/'>数字花园</a>。</p>
+
+    <div>
+      <h2>文章</h2>
+      <ul style="list-style-type: none;">
+        <!-- 在此处添加更多文章 -->
+        <li><i>2024-04-03</i> - <a href="/llm-css-design" title="我让 Claude（一个大型语言模型）编写 CSS 模板，并在单一的 HTML 布局中试用它们，提出我的看法。我发现它非常适合第一次迭代的原型设计。">大型语言模型能设计 CSS 吗？——Claude 实验</a></li>
+        <!-- 其他文章... -->
+      </ul>
+    </div>
+
+    <div>
+      <h2>旧文章（来自我的旧博客）</h2>
+      <ul style="list-style-type: none;">
+        <!-- 在此处添加更多旧文章 -->
+        <li><i>2020-11-19</i> - <a href="/changes" title="">更新日志</a></li>
+        <!-- 其他旧文章... -->
+      </ul>
+    </div>
+  </div>
+
+  <!-- 页脚 -->
+  <footer>
+    <p>&copy; 2025 Pluma. 保留所有权利。</p>
+    <div class="social-links">
+      <a href="https://github.com/linglingxiaoyi/lyPluma.github.io" target="_blank"><i class="fab fa-github"></i></a>
+      <a href="https://github.com/linglingxiaoyi/lyPluma.github.io" target="_blank"><i class="fab fa-linkedin"></i></a>
+      <a href="1986532807@qq.com"><i class="fas fa-envelope"></i></a>
+    </div>
+  </footer>
+
+  <!-- 返回顶部按钮 -->
+  <button id="back-to-top" title="返回顶部">↑</button>
+  <!-- 返回按钮 -->
+  <button id="back-button" title="返回">返回</button>
+  <!-- 引入 JavaScript 文件 -->
+  <script src="scripts.js" ></script>
 </body>
 </html>

@@ -4,9 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>作品集目录</title>
-    <link rel="stylesheet" href="styles/markdown.css">
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
     <style>
+        /* 设置背景图片 */
+        body {
+            background-image: url('assets/images/7.jpg');
+            background-size: cover;
+            background-position: center;
+            margin: 0;
+            height: 100vh;
+            overflow: hidden;  /* 防止内容超出屏幕 */
+        }
+
         /* 增加字体大小 */
         .directory a {
             font-size: 24px; /* 设置更大的字体 */
@@ -42,7 +51,7 @@
             text-decoration: none;
             font-weight: bold;
             color: #333;
-            background-color: #f0f0f0;
+            background-color: #f3f8f6;
             padding: 12px;
             border-radius: 5px;
             cursor: pointer;
@@ -63,6 +72,39 @@
             font-size: 16px;
             cursor: pointer;
         }
+
+        form button {
+            margin-top: 15px;
+            padding: 10px;
+            background-color: #A2B8CA;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        form button:hover {
+            background-color: #00BFFF;  /* 天蓝色 */
+        }
+
+        /* 固定按钮在右下角 */
+        #back-to-top, #back-button {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color:#000000;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            z-index: 1000; /* 确保按钮显示在最上面 */
+        }
+
+        #back-to-top:hover, #back-button:hover {
+            background-color: #006f60; /* 鼠标悬停时改变颜色 */
+        }
     </style>
 </head>
 <body>
@@ -70,48 +112,20 @@
     <h1>作品集 - 目录</h1>
 
     <div class="directory">
-            <a href="javascript:void(0);" onclick="toggleContent('content-one')">百年孤独</a>
-            <a href="javascript:void(0);" onclick="toggleContent('content-two')">简爱</a>
-            <a href="javascript:void(0);" onclick="toggleContent('content-six')">你好</a>
-            <a href="javascript:void(0);" onclick="toggleContent('content-three')">流浪地球</a>
-            <a href="javascript:void(0);" onclick="toggleContent('content-four')">飘</a>
+        <a href="../wen/百年孤独.html" class="floating-word">百年孤独</a>
+        <a href="javascript:void(0);" onclick="window.location.href='files/PDF/简爱.pdf'">简爱</a>
+        <a href="../wen/你好.html" class="floating-word">你好</a>
+        <a href="../wen/流浪地球.html" class="floating-word">流浪地球</a>
+        <a href="../wen/飘.html" class="floating-word">飘</a>
     </div>
 
-    <!-- Content sections -->
-    <div id="content-one" class="content">
-        <h2>百年孤独</h2>
-        <button class="load-btn" onclick="loadMarkdown('百年孤独')">加载《百年孤独》Markdown文件</button>
-        <div id="markdown-content-百年孤独" class="markdown-content"></div>
-        <button class="close-btn" onclick="toggleContent('content-one')">收起</button>
-    </div>
+    <!-- 返回顶部按钮 -->
+    <button id="back-to-top" title="返回顶部">↑</button>
+    <!-- 返回按钮 -->
+    <button id="back-button" title="返回">返回</button>
 
-    <!-- Repeat for other content sections... -->
-
-    <script>
-        function toggleContent(contentId) {
-            var content = document.getElementById(contentId);
-            if (content.style.display === "none" || content.style.display === "") {
-                content.style.display = "block";
-            } else {
-                content.style.display = "none";
-            }
-        }
-
-        function loadMarkdown(bookName) {
-            const filePath = 'files/MD/' + bookName + '.md';
-            fetch(filePath, { headers: { 'Accept': 'text/plain' } })
-                .then(response => response.text())
-                .then(markdownText => {
-                    const elementId = 'markdown-content-' + bookName;
-                    document.getElementById(elementId).innerHTML = marked.parse(markdownText);
-                })
-                .catch(error => {
-                    console.error('Error loading markdown:', error);
-                    const elementId = 'markdown-content-' + bookName;
-                    document.getElementById(elementId).innerHTML = '无法加载文件，请稍后再试。';
-                });
-        }
-    </script>
+    <!-- 引入 JavaScript 文件 -->
+    <script src="../scripts.js"></script>
 
 </body>
 </html>

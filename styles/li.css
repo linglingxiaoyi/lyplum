@@ -1,0 +1,290 @@
+/* 基本样式 */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f3f8f6;  /* 更新背景颜色 */
+    background-image: url('../assets/images/6.jpg');
+    background-size: cover;
+    background-position: center;
+    color: #333;
+    height: 100vh;
+    overflow: hidden;  /* 防止内容超出屏幕 */
+}
+
+/* 导航栏 */
+nav {
+    background: rgba(162, 184, 202, 0.9);
+    padding: 10px 0;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav ul li a:hover {
+    color: #00BFFF;  /* 天蓝色 */
+    text-decoration: underline;
+}
+
+/* 内容部分 */
+/* 新增的容器样式 */
+.container {
+    padding: 20px;
+    margin: 0 auto;  /* 让容器居中 */
+    max-width: 800px; /* 限制最大宽度 */
+    width: 100%;  /* 确保容器占据父元素的 100% 宽度 */
+    box-sizing: border-box; /* 包括内边距和边框在内的宽度计算 */
+    background-color: rgba(255, 255, 255, 0.3); /* 背景颜色 */
+    border-radius: 5px;  /* 圆角 */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* 阴影 */
+    text-align: left;  /* 确保文本左对齐 */
+}
+     /* 返回按钮样式 */
+        #back-button {
+            position: fixed;
+            bottom: 20px;
+            right: 80px;  /* 与返回顶部按钮保持间距 */
+            padding: 10px 15px;
+            background-color: #A2B8CA;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        #back-button:hover {
+            background-color: #00BFFF;  /* 天蓝色 */
+        }
+   /* 正文内容部分*/
+/* 通用文本样式 */
+/* 正文内容部分 */
+a,
+ol li,
+p,
+tbody,
+thead,
+ul li,
+summary {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 1.2em;
+    line-height: 1.75;
+    color: var(--font-color);
+}
+
+p {
+    margin-bottom: 1.2em;
+    margin-top: 0;
+}
+
+p a,
+ul li a {
+    text-decoration: underline;  /* 默认显示下划线 */
+    text-decoration-color: var(--anchor-bottom-color); /* 设置下划线颜色 */
+    font-size: 1em;
+    position: relative; /* 用于悬停时实现渐变 */
+}
+
+p a:hover,
+ul li a:hover {
+    color: #00BFFF;  /* 设置悬停时的文字颜色 */
+    text-decoration-color: transparent;  /* 隐藏默认下划线 */
+}
+
+p a:hover::after,
+ul li a:hover::after {
+    content: "";  /* 创建伪元素 */
+    position: absolute;
+    bottom: 0;  /* 将渐变下划线定位到文字下方 */
+    left: 0;
+    width: 100%;
+    height: 2px;  /* 设置下划线的高度 */
+    background-image: linear-gradient(to right, #00BFFF, #ff6347);  /* 渐变色 */
+}
+
+ h1,
+    h1 a {
+      font-size: 2.2em;
+      text-align: center;
+      line-height: 1.4em;
+    }
+h2 a,
+h3 a {
+    text-decoration: none;
+}
+
+h2 a:hover,
+h3 a:hover {
+    text-decoration: underline;
+}
+
+h1,
+h1 a,
+h2,
+h2 a,
+h3,
+h3 a {
+    font-family: Helvetica, Verdana;
+}
+
+h2,
+h2 a {
+    font-size: 1.4em;
+    line-height: 1.5;
+}
+
+h3,
+h3 a {
+    font-size: 1.2em;
+    line-height: 1.5;
+}
+
+
+/* 页脚样式 */
+footer {
+    border-top: 1px solid var(--header-anchor-color);
+    font-size: .8em;
+}
+
+footer ul,
+nav ul {
+    padding: 0;
+    list-style: none;
+    font-weight: 700;
+}
+
+footer ul li,
+nav ul li {
+    display: inline;
+}
+
+footer ul li {
+    margin-right: 1em;
+}
+
+footer a {
+    text-decoration: none;
+    border-bottom: none;
+}
+
+footer ul li a {
+    border-bottom: none;
+    font-family: Helvetica;
+}
+
+footer ul li a:hover {
+    border-bottom: 3px solid var(--anchor-bottom-color);
+    text-decoration: none;
+}
+
+/* 响应式设计 */
+@media only screen and (max-width: 810px) {
+    nav ul li a {
+        display: inline-block;
+        margin-bottom: 6px;
+        width: 44%;
+        background-color: var(--header-anchor-color);
+        padding: 6px;
+        border-radius: 5px;
+    }
+
+    nav ul {
+        width: 100%;
+    }
+
+    nav a {
+        padding: 0;
+        color: var(--absolute-bkg-color);
+    }
+
+    .head-banner p {
+        font-size: 1.5em;
+    }
+
+    .head-banner {
+        text-align: center;
+    }
+
+    h1 {
+        font-size: 1.8em;
+        line-height: normal;
+    }
+}
+
+@media only screen and (max-width: 470px) {
+    nav ul li a {
+        width: 90%;
+    }
+}
+
+/* 联系表单 底部导航栏*/
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+form label {
+    margin: 10px 0 5px;
+}
+
+form input, form textarea {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+form button {
+    margin-top: 15px;
+    padding: 10px;
+    background-color: #A2B8CA;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+form button:hover {
+    background-color: #00BFFF;  /* 天蓝色 */
+}
+
+/* 页脚 */
+footer {
+    background-color: #A2B8CA;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+}
+
+.social-links {
+    margin-top: 10px;
+}
+
+.social-links a {
+    color: white;
+    margin: 0 10px;
+    font-size: 1.5em;
+}
+
+.social-links a:hover {
+    color: #00BFFF;  /* 天蓝色 */
+}
+
+
