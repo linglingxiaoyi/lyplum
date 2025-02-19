@@ -29,9 +29,9 @@ h1 {
     padding: 40px;
     border-radius: 8px;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
-    width: 66%;
+    width: 50%; /* 设置内容宽度 */
     margin-left: auto;
-    margin-right: auto;
+    margin-right: auto; /* 使用 margin 自动居中 */
     position: relative;
     transition: all 0.3s ease;
 }
@@ -105,18 +105,18 @@ pre {
     border-radius: 5px;
     padding: 15px;
     overflow: auto;
-    font-size: 1.5em;
+    font-size: 1.3em;
     color: #1150af; /* 可自定义代码字体颜色 */
     margin: 20px 0;
     position: relative; /* 使按钮定位在代码框内部 */
 }
+
 /* 复制按钮样式 */
 .copy-btn {
     position: absolute;
     top: 10px;
     right: 10px;
     padding: 8px 12px;
-    background-color: #aba798;
     color: white;
     border: none;
     border-radius: 5px;
@@ -133,7 +133,6 @@ pre {
 .copy-btn:focus {
     outline: none;
 }
-
 
 /* 适应小屏幕：当视口宽度小于768px时 */
 @media screen and (max-width: 768px) {

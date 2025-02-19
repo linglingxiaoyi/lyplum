@@ -42,7 +42,14 @@
                 // 创建复制按钮
                 const copyButton = document.createElement('button');
                 copyButton.classList.add('copy-btn');
-                copyButton.textContent = 'copy';
+
+                // 设置图片为按钮内容
+                const img = document.createElement('img');
+                img.src = '../SolarCopyLinear.svg';  // 设置为你上传的复制图标路径
+                img.alt = 'Copy code';  // 设置图片 alt 属性
+                img.style.width = '24px';  // 可以根据需要调整图片大小
+
+                copyButton.appendChild(img);
 
                 // 绑定复制功能
                 copyButton.addEventListener('click', function() {
